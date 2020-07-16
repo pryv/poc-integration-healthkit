@@ -332,7 +332,7 @@ public class HealthKitStream {
                 event["dateInterval"] = [
                     "start": formatter.string(from: workoutEvent.dateInterval.start),
                     "end": formatter.string(from: workoutEvent.dateInterval.end),
-                    "duration": workoutEvent.dateInterval.duration
+                    "duration": workoutEvent.dateInterval.duration / 60.0
                 ]
                 event["type"] = workoutEvent.type.name
                 
@@ -340,7 +340,7 @@ public class HealthKitStream {
             }
             
             let content: [String: Any?] = [
-                "duration": workoutSample.duration,
+                "duration": workoutSample.duration / 60.0,
                 "totalDistance": workoutSample.totalDistance?.doubleValue(for: HKUnit.meter()),
                 "totalEnergyBurned": workoutSample.totalEnergyBurned?.doubleValue(for: HKUnit.kilocalorie()),
                 "activityType": workoutSample.workoutActivityType.name,
