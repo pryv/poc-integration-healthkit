@@ -1,6 +1,0 @@
-framework module PryvSwiftKit {
-  umbrella header "PryvSwiftKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

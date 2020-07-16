@@ -1,0 +1,14 @@
+### .DS_Store ###
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+
+### Xcode ###
+build
+*.xcodeproj/*
+*.xcodeproj/project.pbxproj
+*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/xcuserdata/*.xcuserdatad/*
+*/xcuserdata/*.xcuserdatad/xcdebugger/*
+*.xcworkspace/xcshareddata/*
+Pods/

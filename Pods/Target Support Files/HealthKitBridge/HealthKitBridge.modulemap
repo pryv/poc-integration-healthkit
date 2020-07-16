@@ -1,6 +1,0 @@
-framework module HealthKitBridge {
-  umbrella header "HealthKitBridge-umbrella.h"
-
-  export *
-  module * { export * }
-}
