@@ -18,6 +18,7 @@ public class HealthKitStream {
     public let type: HKObjectType
     public var unit: HKUnit?
     public let frequency: HKUpdateFrequency?
+    public static let hkClientDataId = "healthkit-id"
     
     // MARK: - public library
     
@@ -53,7 +54,7 @@ public class HealthKitStream {
         }
         
         var params = ["streamIds": [pryvStreamId().streamId], "type": type, "content": content]
-        if let _ = sample { params["tags"] = [String(describing: sample!.uuid)] }
+        if let _ = sample { params["clientData"] = [HealthKitStream.hkClientDataId: String(describing: sample!.uuid)] }
         
         return (params: params, attachmentData: attachmentData)
     }
