@@ -30,7 +30,7 @@ jobs:
         
     - name: Build and test
       run: |
-        xcodebuild clean test -workspace 'HealthKitBridge.xcworkspace' -scheme 'HealthKitBridge' -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
+        xcodebuild -scheme HealthKitBridge -workspace HealthKitBridge.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest' build test
         bash <(curl -s https://codecov.io/bash)
       env:
        destination: ${{ matrix.destination }}
