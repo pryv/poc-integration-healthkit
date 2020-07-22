@@ -29,8 +29,10 @@ jobs:
         DEVELOPER_DIR: ${{ matrix.xcode }}
         
     - name: Build and test
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
       run: |
         xcodebuild clean test -workspace 'HealthKitBridge.xcworkspace' -scheme 'HealthKitBridge' -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
-        bash <(curl -s https://codecov.io/bash) -J 'HealthKitBridge'
+        bash <(curl -s https://codecov.io/bash -t token) 
       env:
        destination: ${{ matrix.destination }}
