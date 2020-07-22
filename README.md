@@ -1,5 +1,5 @@
 # iOS HealthKit bridge for Pryv.io
-![Pryv HealthKit bridge](https://github.com/pryv/bridge-ios-healthkit/workflows/Pryv%20HealthKit%20bridge/badge.svg)
+![Pryv HealthKit bridge](https://github.com/pryv/bridge-ios-healthkit/workflows/Pryv%20HealthKit%20bridge/badge.svg) [![codecov](https://codecov.io/gh/pryv/bridge-ios-healthkit/branch/master/graph/badge.svg)](https://codecov.io/gh/pryv/bridge-ios-healthkit)
 
 This Swift library completes the [lib-swift](https://github.com/pryv/lib-swift) by providing a bridge between HealthKit data samples and Pryv.io streams. 
 
