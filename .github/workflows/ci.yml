@@ -31,7 +31,7 @@ jobs:
     - name: Build and test
       run: |
         gem install slather
-        xcodebuild -enableCodeCoverage YES -scheme HealthKitBridge -workspace HealthKitBridge.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest' clean test
+        xcodebuild clean test -workspace 'HealthKitBridge.xcworkspace' -scheme 'HealthKitBridge' -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
         slather
         bash <(curl -s https://codecov.io/bash) -f ./cobertura.xml
       env:
