@@ -30,7 +30,9 @@ jobs:
         
     - name: Build and test
       run: |
-        xcodebuild -scheme HealthKitBridge -workspace HealthKitBridge.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest' build test
-        bash <(curl -s https://codecov.io/bash)
+        gem install slather
+        xcodebuild -enableCodeCoverage YES -scheme HealthKitBridge -workspace HealthKitBridge.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest' clean test
+        slather
+        bash <(curl -s https://codecov.io/bash) -f ./cobertura.xml
       env:
        destination: ${{ matrix.destination }}
