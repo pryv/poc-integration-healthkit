@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08B58A031E93F70DE1D0188A /* Pods_HealthKitBridgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E3A0847A68828AAA5D958 /* Pods_HealthKitBridgeTests.framework */; };
 		5F946BC2ECD76EEBE9AB3CD9 /* Pods_HealthKitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05AA6C6EDFA3671D70ECCC66 /* Pods_HealthKitBridge.framework */; };
+		B32C471824C893E40003AA48 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32C471724C893E40003AA48 /* UtilsTests.swift */; };
 		B3529DE424B6FA4700B20349 /* HealthKitStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3529DE324B6FA4700B20349 /* HealthKitStreamTests.swift */; };
 		B3529DE624B6FB7300B20349 /* PryvStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3529DE524B6FB7300B20349 /* PryvStreamTests.swift */; };
 		B3529DE824B6FC3F00B20349 /* HealthKitBridge.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B3529DE724B6FC3F00B20349 /* HealthKitBridge.podspec */; };
@@ -37,6 +38,7 @@
 		0A376932B908AC215FB49392 /* Pods-HealthKitBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitBridge.release.xcconfig"; path = "Target Support Files/Pods-HealthKitBridge/Pods-HealthKitBridge.release.xcconfig"; sourceTree = "<group>"; };
 		0EE325C786E593513D54D83D /* Pods-HealthKitBridgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitBridgeTests.release.xcconfig"; path = "Target Support Files/Pods-HealthKitBridgeTests/Pods-HealthKitBridgeTests.release.xcconfig"; sourceTree = "<group>"; };
 		613E3A0847A68828AAA5D958 /* Pods_HealthKitBridgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthKitBridgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32C471724C893E40003AA48 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		B3529DE324B6FA4700B20349 /* HealthKitStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitStreamTests.swift; sourceTree = "<group>"; };
 		B3529DE524B6FB7300B20349 /* PryvStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PryvStreamTests.swift; sourceTree = "<group>"; };
 		B3529DE724B6FC3F00B20349 /* HealthKitBridge.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HealthKitBridge.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -123,6 +125,7 @@
 				B3AB18E524B6E97100FFCAD7 /* Info.plist */,
 				B3529DE324B6FA4700B20349 /* HealthKitStreamTests.swift */,
 				B3529DE524B6FB7300B20349 /* PryvStreamTests.swift */,
+				B32C471724C893E40003AA48 /* UtilsTests.swift */,
 			);
 			path = HealthKitBridgeTests;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				B3529DE624B6FB7300B20349 /* PryvStreamTests.swift in Sources */,
 				B3529DE424B6FA4700B20349 /* HealthKitStreamTests.swift in Sources */,
+				B32C471824C893E40003AA48 /* UtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

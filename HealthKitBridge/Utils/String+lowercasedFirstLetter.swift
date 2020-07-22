@@ -16,8 +16,4 @@ public extension String {
         return prefix(1).lowercased() + dropFirst()
     }
     
-    /// Modify the current string by lowercasing its first letter
-    mutating func lowercasedFirstLetter() {
-        self = self.lowercasedFirstLetter()
-    }
 }

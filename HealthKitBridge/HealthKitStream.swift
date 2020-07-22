@@ -44,11 +44,12 @@ public class HealthKitStream {
     /// - Parameters:
     ///   - sample: the HK sample
     ///   - store: the HK store
+    ///   - summary: the `HKActivitySummary` in case of an `HKActivitySummaryQuery`
     /// - Returns: the json formatted event's parameters and the data for the corresponding attachment, if needed
     /// # Note
     ///     At least one of the two attributes needs to be not `nil`
-    public func pryvEvent(from sample: HKSample? = nil, of store: HKHealthStore? = nil) -> (params: PryvSample?, attachmentData: Data?) {
-        let (type, content, attachmentData) = pryvContentAndType(from: sample, of: store)
+    public func pryvEvent(from sample: HKSample? = nil, of store: HKHealthStore? = nil, activity summary: HKActivitySummary? = nil) -> (params: PryvSample?, attachmentData: Data?) {
+        let (type, content, attachmentData) = pryvContentAndType(from: sample, of: store, activity: summary)
         if content == nil && attachmentData == nil{
             return (params: nil, attachmentData: nil)
         }
@@ -247,10 +248,10 @@ public class HealthKitStream {
                 unit = HKUnit.millimeterOfMercury()
                 pryvType = "pressure/mmhg"
             case "RespiratoryRate":
-                unit = HKUnit.count()
+                unit = HKUnit.count().unitDivided(by: HKUnit.minute())
                 pryvType = "frequency/brpm"
             case "DietaryFatTotal", "DietaryFatSaturated", "DietaryCholesterol", "DietaryCarbohydrates", "DietaryFiber", "DietarySugar", "DietaryProtein", "DietaryCalcium", "DietaryIron", "DietaryPotassium", "DietarySodium", "DietaryVitaminA", "DietaryVitaminC", "DietaryVitaminD":
-                unit = HKUnit.count().unitDivided(by: HKUnit.minute())
+                unit = HKUnit.gram()
                 pryvType = "mass/g"
             case "BloodGlucose":
                 unit = HKUnit.moleUnit(withMolarMass: HKUnitMolarMassBloodGlucose).unitDivided(by: HKUnit.liter())
@@ -261,7 +262,7 @@ public class HealthKitStream {
             case "ForcedExpiratoryVolume1", "ForcedVitalCapacity":
                 unit = HKUnit.liter()
                 pryvType = "volume/l"
-            case "Vo2Max":
+            case "VO2Max":
                 unit = HKUnit.literUnit(with: .milli).unitDivided(by: HKUnit.gramUnit(with: .kilo).unitMultiplied(by: HKUnit.minute()))
                 pryvType = "gas-consumption/mlpkgmin"
             case "InsulinDelivery":
@@ -296,12 +297,12 @@ public class HealthKitStream {
             }
         case is HKActivitySummaryType:
             let content = [
-                "activeEnergyBurned": summary?.activeEnergyBurned,
-                "activeEnergyBurnedGoal": summary?.activeEnergyBurnedGoal,
-                "appleExerciseTime": summary?.appleExerciseTime,
-                "appleExerciseTimeGoal": summary?.appleExerciseTimeGoal,
-                "appleStandHours": summary?.appleStandHours,
-                "appleStandHoursGoal": summary?.appleStandHoursGoal
+                "activeEnergyBurned": summary?.activeEnergyBurned.doubleValue(for: HKUnit.kilocalorie()),
+                "activeEnergyBurnedGoal": summary?.activeEnergyBurnedGoal.doubleValue(for: HKUnit.kilocalorie()),
+                "appleExerciseTime": summary?.appleExerciseTime.doubleValue(for: HKUnit.minute()),
+                "appleExerciseTimeGoal": summary?.appleExerciseTimeGoal.doubleValue(for: HKUnit.minute()),
+                "appleStandHours": summary?.appleStandHours.doubleValue(for: HKUnit.count()),
+                "appleStandHoursGoal": summary?.appleStandHoursGoal.doubleValue(for: HKUnit.count())
             ]
             return (type: "activity/summary", content: content, attachmentData: attachmentData)
         case is HKAudiogramSampleType:
@@ -310,9 +311,9 @@ public class HealthKitStream {
             var sensitivityPoints = [[String: Any?]]()
             for sensitivityPoint in audiogramSample.sensitivityPoints {
                 var newPoint = [String: Any?]()
-                newPoint["frequency"] = sensitivityPoint.frequency
-                newPoint["leftEarSensitivity"] = sensitivityPoint.leftEarSensitivity
-                newPoint["rightEarSensitivity"] = sensitivityPoint.rightEarSensitivity
+                newPoint["frequency"] = sensitivityPoint.frequency.doubleValue(for: HKUnit.count().unitDivided(by: HKUnit.minute()))
+                newPoint["leftEarSensitivity"] = sensitivityPoint.leftEarSensitivity?.doubleValue(for: HKUnit.decibelHearingLevel())
+                newPoint["rightEarSensitivity"] = sensitivityPoint.rightEarSensitivity?.doubleValue(for: HKUnit.decibelHearingLevel())
                 
                 sensitivityPoints.append(newPoint)
             }
