@@ -27,9 +27,6 @@ jobs:
       shell: bash
       env:
         DEVELOPER_DIR: ${{ matrix.xcode }}
-            
-    - name: Force Xcode 11
-      run: sudo xcode-select -switch /Applications/Xcode_11.3.app
         
     - name: Build and test
       run: |
