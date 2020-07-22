@@ -28,9 +28,6 @@ jobs:
       env:
         DEVELOPER_DIR: ${{ matrix.xcode }}
         
-    - name: Force Xcode 11
-      run: sudo xcode-select -switch /Applications/Xcode_11.3.app
-        
     - name: Build and test
       run: |
         xcodebuild clean test -enableCodeCoverage YES -workspace 'HealthKitBridge.xcworkspace' -scheme 'HealthKitBridge' -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=latest'
