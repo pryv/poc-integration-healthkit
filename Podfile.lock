@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.2.2)
   - HealthKitBridge (0.1.0):
     - PryvSwiftKit
   - Mocker (2.2.0)
@@ -37,11 +37,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PryvSwiftKit:
-    :commit: 73c7f66c5405367af72f0e5469bdd726a3d9fa79
+    :commit: 4e523648748549895abb3e2657c090d1f69cf837
     :git: https://github.com/pryv/lib-swift.git
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   HealthKitBridge: f379cb32aec59d0fec28acab905318615b2685cf
   Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
@@ -50,6 +50,6 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: febbcd20617932fe8b06f9163c04193b644943f7
+PODFILE CHECKSUM: 2c2a7cb91e0fcf707ba8908350f14d7dc912af32
 
 COCOAPODS: 1.8.4
