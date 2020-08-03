@@ -5,7 +5,7 @@ This Swift library completes the [lib-swift](https://github.com/pryv/lib-swift) 
 
 ## Example
 
-You will find a sample iOS app at [https://github.com/pryv/app-swift-example](https://github.com/pryv/app-swift-example)
+You will find a sample iOS app at [https://github.com/pryv/app-swift-example](https://github.com/pryv/app-swift-example). This [video tutorial](https://www.youtube.com/watch?v=PIBh2_joFqQ) navigates you through the sample iOS app and shows you how to connect HealthKit to your Pryv.io account.
 
 ## Requirements
 
