@@ -1,7 +1,8 @@
-# iOS HealthKit bridge for Pryv.io
-![Pryv HealthKit bridge](https://github.com/pryv/bridge-ios-healthkit/workflows/Pryv%20HealthKit%20bridge/badge.svg) [![codecov](https://codecov.io/gh/pryv/bridge-ios-healthkit/branch/master/graph/badge.svg)](https://codecov.io/gh/pryv/bridge-ios-healthkit)
+# iOS HealthKit integration for Pryv.io
 
-This Swift library completes the [lib-swift](https://github.com/pryv/lib-swift) by providing a bridge between HealthKit data samples and Pryv.io streams. 
+![Pryv HealthKit integration](https://github.com/pryv/poc-integration-healthkit/workflows/Pryv%20HealthKit%20bridge/badge.svg) [![codecov](https://codecov.io/gh/pryv/bridge-ios-healthkit/branch/master/graph/badge.svg)](https://codecov.io/gh/pryv/bridge-ios-healthkit)
+
+iOS library providing integration with HealthKit; complements [lib-swift](https://github.com/pryv/lib-swift) by providing a bridge between HealthKit data samples and Pryv.io streams. 
 
 ## Example
 
@@ -27,9 +28,9 @@ To install it, simply add the following line to your Podfile:
 
 ```ruby
 source 'https://github.com/pryv/lib-swift.git'
-source 'https://github.com/pryv/ios-healthkit-bridge.git'
+source 'https://github.com/pryv/poc-integration-healthkit.git'
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'PryvApiSwiftKit', :git => 'https://github.com/pryv/ios-healthkit-bridge.git', :branch => 'master'
+pod 'PryvApiSwiftKit', :git => 'https://github.com/pryv/poc-integration-healthkit.git', :branch => 'master'
 ```
   
 ### Convert HealthKit sample to Pryv event
