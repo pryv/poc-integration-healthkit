@@ -54,7 +54,17 @@ public class HealthKitStream {
             return (params: nil, attachmentData: nil)
         }
         
-        var params = ["streamIds": [pryvStreamId().streamId], "type": type, "content": content]
+        var time: Int? = nil;
+        var duration: Int? = nil;
+        
+        if (sample != nil && sample?.startDate != nil ) {
+            time = Int(sample!.startDate.timeIntervalSince1970);
+            if (sample?.endDate != nil) {
+                duration = time! - Int(sample!.endDate.timeIntervalSince1970);
+            }
+        }
+        
+        var params = ["streamIds": [pryvStreamId().streamId], "type": type, "content": content, "time": time, "duration": duration]
         if let _ = sample { params["clientData"] = [HealthKitStream.hkClientDataId: String(describing: sample!.uuid)] }
         
         return (params: params, attachmentData: attachmentData)
