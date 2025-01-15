@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'HealthKitBridge'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Pryv bridge for iOS HealthKit'
 
   s.description      = <<-DESC

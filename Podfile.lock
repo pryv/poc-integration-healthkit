@@ -1,19 +1,17 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (5.10.2)
   - HealthKitBridge (0.1.0):
     - PryvSwiftKit
-  - Mocker (2.2.0)
-  - PromisesObjC (1.2.9)
-  - PromisesSwift (1.2.9):
-    - PromisesObjC (= 1.2.9)
-  - PryvSwiftKit (2.1.0):
+  - PromisesObjC (2.4.0)
+  - PromisesSwift (2.4.0):
+    - PromisesObjC (= 2.4.0)
+  - PryvSwiftKit (2.1.1):
     - Alamofire
-    - Mocker
     - PromisesSwift
     - Socket.IO-Client-Swift
-  - Socket.IO-Client-Swift (15.2.0):
-    - Starscream (~> 3.1)
-  - Starscream (3.1.1)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - HealthKitBridge (from `./`)
@@ -22,7 +20,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Mocker
     - PromisesObjC
     - PromisesSwift
     - Socket.IO-Client-Swift
@@ -37,19 +34,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PryvSwiftKit:
-    :commit: 4e523648748549895abb3e2657c090d1f69cf837
+    :commit: cbf578334e8735992dfd35e42dfcbe03501abe50
     :git: https://github.com/pryv/lib-swift.git
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  HealthKitBridge: f379cb32aec59d0fec28acab905318615b2685cf
-  Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
-  PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
-  PromisesSwift: 991ad88e9851c45410d6697d1fe5df88fd3deb08
-  PryvSwiftKit: 13f624eb73630e63717c0901b0dbcca18139824b
-  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
-  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  HealthKitBridge: 81002f17f6ed7f82f53c67bd187eed9470d60422
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
+  PryvSwiftKit: f35747ac55aa9d4fff09a4b4a6b56204dda24465
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 2c2a7cb91e0fcf707ba8908350f14d7dc912af32
+PODFILE CHECKSUM: 6194f4a3c8f5f98a046cf42dda19f0c82913dab9
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.16.2
